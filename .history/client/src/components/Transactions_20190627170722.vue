@@ -2,7 +2,7 @@
     <v-card style="width:100%">
         <v-card-title>
             <span class="pr-3">
-                Transaction
+                Transaction for {{months[currentMonth].name}} - {{currentYear}}
             </span>
             <v-btn flat icon class="pr-2" v-on:click="gotoMonth(-1)">
                 <v-icon>keyboard_arrow_left</v-icon>
@@ -56,49 +56,7 @@
 
 <script>
 export default {
-  data(){
-      return{
-          months:[
-            {name:'Zero', abbrev:'ZZZ', index:0},
-            {name:'January', abbrev:'Jan', index:1},
-            {name:'February', abbrev:'Feb', index:2},
-            {name:'March', abbrev:'Mar', index:3},
-            {name:'April', abbrev:'Apr', index:4},
-            {name:'May', abbrev:'May', index:5},
-            {name:'June', abbrev:'Jun', index:6},
-            {name:'July', abbrev:'Jul', index:7},
-            {name:'August', abbrev:'Aug', index:8},
-            {name:'September', abbrev:'Sep', index:9},
-            {name:'October', abbrev:'Oct', index:10},
-            {name:'November', abbrev:'Nov', index:11},
-            {name:'December', abbrev:'Dec', index:12}
-          ],
-          max25Chars:(v)=>v.length<=25||'Input too long',
-          search:'',
-          pagination:{},
-          headers:[
-            {text:'Date', align:'center', sortable:false, value:'date'},
-            {text:'Product Id', align:'center', sortable:false, value:'productId'},
-            {text:'Product Name', align:'center', sortable:false, value:'productName'},
-            {text:'amount', align:'center', sortable:false, value:'amount'},
-          ],
-        items:[
-            {'id':'5d143e5de02f3318f61e6e7a'},
-            {'transactionDate':'12/29/2018'},
-            {'productId':'product1'},
-            {'productName':'Cookie Dough - Peanut Butter'},
-            {'amount':'26'}
-        ]
-      }
-  },  
-  methods: {
-    gotoMonth: function (param) {
-      console.log('here in gotoMonth')
-    },
-    gotoCurrentMonth: function () {
-      console.log('here in gotoCurrentMonth')
-    }
-  }
+
 }
 </script>
 
