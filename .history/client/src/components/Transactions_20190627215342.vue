@@ -43,7 +43,7 @@
                     </td>
                     <td class="text-xs-left">{{props.item.productId}}</td>
                     <td class="text-xs-left">{{props.item.productName}}</td>
-                    <td class="text-xs-left">{{props.item.amount}}</td>
+                    <td class="text-xs-right">{{props.item.amount}}</td>
                 </tr>
             </template>
 
@@ -87,18 +87,17 @@ export default {
       search: '',
       pagination: {},
       headers: [
-        {text: 'Date', align: 'left', sortable: false, value: 'date'},
-        {text: 'Product Id', align: 'left', sortable: false, value: 'productId'},
-        {text: 'Product Name', align: 'left', sortable: false, value: 'productName'},
-        {text: 'Amount', align: 'left', sortable: false, value: 'amount'}
+        {text: 'Date', align: 'center', sortable: false, value: 'date'},
+        {text: 'Product Id', align: 'center', sortable: false, value: 'productId'},
+        {text: 'Product Name', align: 'center', sortable: false, value: 'productName'},
+        {text: 'amount', align: 'center', sortable: false, value: 'amount'}
       ],
       items: [
-        {'id': '5d143e5de02f3318f61e6e7a',
-          'transactionDate': '12/29/2018',
-          'productId': 'product1',
-          'productName': 'Cookie Dough - Peanut Butter',
-          'amount': '26'
-        }
+        {'id': '5d143e5de02f3318f61e6e7a'},
+        {'transactionDate': '12/29/2018'},
+        {'productId': 'product1'},
+        {'productName': 'Cookie Dough - Peanut Butter'},
+        {'amount': '26'}
       ]
     }
   },
@@ -114,7 +113,7 @@ export default {
       const transDate = new Date(tx.transactionDate)
       let transaction = {
         transactionDate: me.months[transDate.getUTCMonth() + 1].abbrev + '/' + me.days[transDate.getDay] + '/' + me.currentYear
-
+        
       }
       return transaction
     }

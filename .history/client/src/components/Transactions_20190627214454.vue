@@ -43,7 +43,7 @@
                     </td>
                     <td class="text-xs-left">{{props.item.productId}}</td>
                     <td class="text-xs-left">{{props.item.productName}}</td>
-                    <td class="text-xs-left">{{props.item.amount}}</td>
+                    <td class="text-xs-right">{{props.item.amount}}</td>
                 </tr>
             </template>
 
@@ -58,12 +58,6 @@
 export default {
   data () {
     return {
-      transaction: {
-        productId: null,
-        transactionDate: null,
-        productName: '',
-        amount: 0.0
-      },
       months: [
         {name: 'Zero', abbrev: 'ZZZ', index: 0},
         {name: 'January', abbrev: '1', index: 1},
@@ -79,26 +73,25 @@ export default {
         {name: 'November', abbrev: '11', index: 11},
         {name: 'December', abbrev: '12', index: 12}
       ],
-      days: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30],
-      currentMonth: 6,
-      currentDay: 27,
-      currentYear: 2019,
+      days:[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30],
+      currentMonth:6,
+      currentDay:27,
+      currentYear:2019,
       max25Chars: (v) => v.length <= 25 || 'Input too long',
       search: '',
       pagination: {},
       headers: [
-        {text: 'Date', align: 'left', sortable: false, value: 'date'},
-        {text: 'Product Id', align: 'left', sortable: false, value: 'productId'},
-        {text: 'Product Name', align: 'left', sortable: false, value: 'productName'},
-        {text: 'Amount', align: 'left', sortable: false, value: 'amount'}
+        {text: 'Date', align: 'center', sortable: false, value: 'date'},
+        {text: 'Product Id', align: 'center', sortable: false, value: 'productId'},
+        {text: 'Product Name', align: 'center', sortable: false, value: 'productName'},
+        {text: 'amount', align: 'center', sortable: false, value: 'amount'}
       ],
       items: [
-        {'id': '5d143e5de02f3318f61e6e7a',
-          'transactionDate': '12/29/2018',
-          'productId': 'product1',
-          'productName': 'Cookie Dough - Peanut Butter',
-          'amount': '26'
-        }
+        {'id': '5d143e5de02f3318f61e6e7a'},
+        {'transactionDate': '12/29/2018'},
+        {'productId': 'product1'},
+        {'productName': 'Cookie Dough - Peanut Butter'},
+        {'amount': '26'}
       ]
     }
   },
@@ -109,14 +102,13 @@ export default {
     gotoCurrentMonth: function () {
       console.log('here in gotoCurrentMonth')
     },
-    mapTransaction: function (tx) {
-      const me = this
-      const transDate = new Date(tx.transactionDate)
-      let transaction = {
-        transactionDate: me.months[transDate.getUTCMonth() + 1].abbrev + '/' + me.days[transDate.getDay] + '/' + me.currentYear
+    mapTransaction: function(tx){
+            const me = this
+            const transDate = new Date(tx.transactionDate)
+            let transaction = {
+                transactionDate: me.months[transDate.getUTCMonth()+1].abbrev+'/'+me.days[transDate.getDay]+'/'+me.currentYear
 
-      }
-      return transaction
+            }
     }
   }
 }

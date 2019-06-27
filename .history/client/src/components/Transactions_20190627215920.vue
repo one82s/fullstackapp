@@ -90,14 +90,14 @@ export default {
         {text: 'Date', align: 'left', sortable: false, value: 'date'},
         {text: 'Product Id', align: 'left', sortable: false, value: 'productId'},
         {text: 'Product Name', align: 'left', sortable: false, value: 'productName'},
-        {text: 'Amount', align: 'left', sortable: false, value: 'amount'}
+        {text: 'amount', align: 'left', sortable: false, value: 'amount'}
       ],
       items: [
         {'id': '5d143e5de02f3318f61e6e7a',
-          'transactionDate': '12/29/2018',
-          'productId': 'product1',
-          'productName': 'Cookie Dough - Peanut Butter',
-          'amount': '26'
+        'transactionDate': '12/29/2018',
+        'productId': 'product1',
+        'productName': 'Cookie Dough - Peanut Butter',
+        'amount': '26'
         }
       ]
     }
