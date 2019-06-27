@@ -132,7 +132,7 @@
       color="pink"
       dark
       fixed
-      @click="dialog = !dialog"
+      v-on:click="menuAction"
     >
       <v-icon>add</v-icon>
     </v-btn>
@@ -250,12 +250,12 @@ export default {
   props: {
     source: String
   },
-  methods:{
-    menuAction:function(){
-        console.log('menuAction here')
+  methods: {
+    menuAction: function () {
+      console.log('menuAction here')
     },
-    showProfile: function(){
-        console.log('show profile here')
+    showProfile: function () {
+      console.log('show profile here')
     }
   }
 }

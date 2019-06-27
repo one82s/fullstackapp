@@ -5,6 +5,7 @@ const Transaction = require('../../models/transactions')
 module.exports = function (router){
     router.get('/transaction/:productid', function(req, res){
         const userId = req.get('userId');
+        // const userId = '1';
         const productId = req.params.productid
         
         const qry = {
@@ -13,7 +14,19 @@ module.exports = function (router){
         }
 
         Transaction.find(qry)
-        .sort('productid', 1)
+        // .sort('productid', 1)
+        .exec()
+        .then(docs => res.status(200)
+            .json(docs))
+        .catch(err=>res.status(500)
+            .json({
+                message: 'Error finding transaction for user',
+                error:err
+            }))    
+    })
+    router.get('/transaction/productid/:productid', function(req, res){
+        Transaction.find({product_id:req.params.productid})
+        // .sort('productid', 1)
         .exec()
         .then(docs => res.status(200)
             .json(docs))
