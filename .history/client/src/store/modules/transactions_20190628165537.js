@@ -25,7 +25,7 @@ const state = {
 }
 
 const getters ={
-    productById: state=>state.transactions
+    productById: state=>state.product
 }
 
 const actions ={

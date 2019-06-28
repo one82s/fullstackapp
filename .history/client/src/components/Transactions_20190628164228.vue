@@ -56,23 +56,6 @@
 
 <script>
 export default {
-  computed:{
-    currentMonth(){
-      return this.$store.state.transactions.currentMonth
-    },
-    currentYear(){
-      return this.$store.state.transactions.currentYear
-    },
-    currentDay(){
-      return this.$store.state.transactions.currentDay
-    },
-    months(){
-      return this.$store.state.transactions.months
-    }, 
-    items(){
-      return this.$store.getters.productById
-    }
-  },
   data () {
     return {
       transaction: {
@@ -84,23 +67,21 @@ export default {
     }
   },
   methods: {
-    getProductById: function(){
-      this.$store.dispatch('productById')
-    },
     gotoMonth: function (param) {
-      this.$store.dispatch('gotoMonth')
+      console.log('here in gotoMonth')
     },
     gotoCurrentMonth: function () {
-      this.$store.dispatch('gotoCurrentMonth')
+      console.log('here in gotoCurrentMonth')
     },
-    // mapTransaction: function (tx) {
-    //   const me = this
-    //   const transDate = new Date(tx.transactionDate)
-    //   let transaction = {
-    //     transactionDate: me.months[transDate.getUTCMonth() + 1].abbrev + '/' + me.days[transDate.getDay] + '/' + me.currentYear
-    //   }
-    //   return transaction
-    // }
+    mapTransaction: function (tx) {
+      const me = this
+      const transDate = new Date(tx.transactionDate)
+      let transaction = {
+        transactionDate: me.months[transDate.getUTCMonth() + 1].abbrev + '/' + me.days[transDate.getDay] + '/' + me.currentYear
+
+      }
+      return transaction
+    }
   }
 }
 </script>
