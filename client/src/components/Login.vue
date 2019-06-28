@@ -55,26 +55,26 @@ export default {
 
     }
   },
-  computed:{
-    isLoggedIn(){
+  computed: {
+    isLoggedIn () {
       return this.$store.getters.isLoggedIn
     },
-     loginError(){
+    loginError () {
       return this.$store.getters.loginError
     }
   },
   methods: {
     login: function () {
       const vm = this
-      const payload={
+      const payload = {
         email: this.email,
         password: this.password
       }
-      this.$store.dispatch('loginUser', payload).then(()=>{
-        if(vm.isLoggedIn){
-          this.$router.push({path:'/'})
-        }else{
-          vm.showAlert = true;
+      this.$store.dispatch('loginUser', payload).then(() => {
+        if (vm.isLoggedIn) {
+          this.$router.push({path: '/'})
+        } else {
+          vm.showAlert = true
         }
       })
     //   if (vm.password === 'test11') {

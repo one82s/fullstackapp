@@ -89,7 +89,7 @@ export default {
         {text: 'Product Id', align: 'left', sortable: false, value: 'productId'},
         {text: 'Product Name', align: 'left', sortable: false, value: 'productName'},
         {text: 'Amount', align: 'left', sortable: false, value: 'amount'}
-      ]
+      ],
     }
   },
   methods: {

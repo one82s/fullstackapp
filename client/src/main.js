@@ -6,7 +6,7 @@ import Vuetify from 'vuetify'
 import App from './App'
 import router from './router'
 
-//Vuex store
+// Vuex store
 import store from './store'
 
 Vue.config.productionTip = false
