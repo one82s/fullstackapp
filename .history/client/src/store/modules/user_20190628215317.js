@@ -1,12 +1,12 @@
 const state = {
   email: '',
   userId: null,
-  isLoggedIn: false,
+  isLoggeIn: false,
   loginError: ''
 }
 
 const getters = {
-  isLoggedIn: state => state.isLoggedIn,
+  isLoggeIn: state => state.isLoggeIn,
   userId: state => state.userId,
   loginError: state => state.loginError
 }
@@ -30,10 +30,10 @@ const mutations = {
   loginUser (state, payload) {
     state.email = payload.email
     state.userId = payload.userId
-    state.isLoggedIn = true
+    state.isLoggeIn = true
   },
   loginError (state) {
-    state.isLoggedIn = false
+    state.isLoggeIn = false
     state.loginError = 'Email and/or password are invalid. Login failed'
   }
 }

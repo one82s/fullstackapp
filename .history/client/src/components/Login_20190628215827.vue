@@ -79,6 +79,12 @@ export default {
             vm.showAlert = true
           }
         })
+    //   if (vm.password === 'test11') {
+    //     this.$router.push({path: '/'})
+    //   } else {
+    //     vm.showAlert = true
+    //     vm.message = 'E-mail or Password is invalid'
+    //   }
     },
     cancel: function () {
       console.log('The user does not want to login')

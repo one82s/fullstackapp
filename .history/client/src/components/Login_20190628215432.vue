@@ -71,14 +71,20 @@ export default {
         password: this.password
       }
       this.$store.dispatch('loginUser', payload)
-        .then(() => {
-          if (vm.isLoggedIn) {
-            console.log('here in if of Login Vue')
-            this.$router.push({path: '/'})
-          } else {
-            vm.showAlert = true
-          }
-        })
+      .then(() => {
+        if (vm.isLoggedIn) {
+          console.log('here in if of Login Vue')
+          this.$router.push({path: '/'})
+        } else {
+          vm.showAlert = true
+        }
+      })
+    //   if (vm.password === 'test11') {
+    //     this.$router.push({path: '/'})
+    //   } else {
+    //     vm.showAlert = true
+    //     vm.message = 'E-mail or Password is invalid'
+    //   }
     },
     cancel: function () {
       console.log('The user does not want to login')

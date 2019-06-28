@@ -213,7 +213,7 @@ export default {
   },
   computed: {
     isLoggedIn () {
-      return this.$store.getters.isLoggedIn
+      return this.$store.getters.isLoggeIn
     }
   },
   data: () => ({
@@ -266,7 +266,7 @@ export default {
   mounted: function () {
     console.log('Is user logged in? ', this.isLoggedIn)
     if (!this.isLoggedIn) {
-      this.$router.push({path: '/login'})
+      this.$router.push({path: '/'})
     }
   }
 }

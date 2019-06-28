@@ -211,10 +211,10 @@ export default {
     Transactions,
     EditTransactions
   },
-  computed: {
-    isLoggedIn () {
-      return this.$store.getters.isLoggedIn
-    }
+  computed:{
+      isLoggedIn(){
+       return this.$store.getters.productById
+      }
   },
   data: () => ({
     dialog: false,
@@ -263,10 +263,10 @@ export default {
       console.log('show profile here')
     }
   },
-  mounted: function () {
+  mounted: function(){
     console.log('Is user logged in? ', this.isLoggedIn)
-    if (!this.isLoggedIn) {
-      this.$router.push({path: '/login'})
+    if(!this.isLoggedIn){
+      this.$router.push({path:'/'})
     }
   }
 }
