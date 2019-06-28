@@ -32,7 +32,7 @@
                 :top="true"
                 v-model="showAlert"
             >
-                {{loginError}}
+                {{message}}
             </v-snackbar>
         </v-container>
 </template>

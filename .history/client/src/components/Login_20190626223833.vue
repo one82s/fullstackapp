@@ -32,7 +32,7 @@
                 :top="true"
                 v-model="showAlert"
             >
-                {{loginError}}
+                {{message}}
             </v-snackbar>
         </v-container>
 </template>
@@ -55,34 +55,15 @@ export default {
 
     }
   },
-  computed:{
-    isLoggedIn(){
-      return this.$store.getters.isLoggedIn
-    },
-     loginError(){
-      return this.$store.getters.loginError
-    }
-  },
   methods: {
     login: function () {
       const vm = this
-      const payload={
-        email: this.email,
-        password: this.password
+      if (vm.password === 'test11') {
+        this.$router.push({path: '/'})
+      } else {
+        vm.showAlert = true
+        vm.message = 'E-mail or Password is invalid'
       }
-      this.$store.dispatch('loginUser', payload).then(()=>{
-        if(vm.isLoggedIn){
-          this.$router.push({path:'/'})
-        }else{
-          vm.showAlert = true;
-        }
-      })
-    //   if (vm.password === 'test11') {
-    //     this.$router.push({path: '/'})
-    //   } else {
-    //     vm.showAlert = true
-    //     vm.message = 'E-mail or Password is invalid'
-    //   }
     },
     cancel: function () {
       console.log('The user does not want to login')
