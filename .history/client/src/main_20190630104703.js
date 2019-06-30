@@ -13,9 +13,9 @@ Vue.config.productionTip = false
 
 Vue.use(Vuetify)
 
-Vue.axios = Vue.prototype.$http = axios.create({
-  baseUrl: 'http://localhost:8081/api'
-})
+Vue.axios = Vue.prototype.$http = axios.create{
+    baseUrl: 'http://localhost:8081/api'
+}
 
 /* eslint-disable no-new */
 new Vue({

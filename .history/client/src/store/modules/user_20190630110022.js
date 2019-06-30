@@ -1,4 +1,3 @@
-import Vue from 'vue'
 const state = {
   email: '',
   userId: null,
@@ -13,28 +12,24 @@ const getters = {
 }
 
 const actions = {
-  async loginUser ({commit}, payload) {
-    await Vue.axios.get('/user/email/' + payload.email)
-      .then((resp) => {
-        let data = resp.data
-        console.log('payload.email is: ', payload.email)
-        console.log('payload.password is: ', payload.password)
-        // sanity check to make sure data is received
-        if (data && data.length > 0) {
-          // Test password entered (payload) against user object
-          if (data[0].password === payload.password) {
-            payload.userId = data[0]._id
-            console.log('here in if of user vuex store module')
-            commit('loginUser', payload)
-          } else {
-            commit('loginError')
-          }
-        }
-      })
-      .catch(() => {
-        commit('loginError')
-      })
-  }
+    async loginUser ({commit}, payload) {
+        await Vue.axios.get('/user/email/'+payload.email)
+        .then((resp)=>{
+            let data = resp.data
+            console.log('payload.email is: ', payload.email)
+            console.log('payload.password is: ', payload.password)
+            if(data && data.length>0){
+                // Test password entered (payload) against user object
+                if(data[0].password === payload.password){
+                    payload.userId = data[0]._id
+                    console.log('here in if of user vuex store module')
+                    commit('loginUser', payload)
+                } else {
+                    commit('loginError')
+                }
+            }
+        })
+    }
 //   loginUser ({commit}, payload) {
 //     // Stubbing for now, call to API to follow
 //     console.log('payload.email is: ', payload.email)
