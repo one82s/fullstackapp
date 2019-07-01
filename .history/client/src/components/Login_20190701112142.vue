@@ -65,7 +65,7 @@ export default {
   },
   methods: {
     login: function () {
-      // console.log('here in if of Login Vue method')
+    console.log('here in if of Login Vue method')
       const vm = this
       const payload = {
         email: this.email,

@@ -15,12 +15,12 @@ const getters = {
 
 const actions = {
   async loginUser ({commit}, payload) {
-    // console.log('testing 123', payload.email)
-    await axios.get('http://localhost:8081/api/user/email/' + payload.email)
+    console.log('testing 123', payload.email)
+    await axios.get('http://localhost:8081/user/email/' + payload.email)
       .then((resp) => {
         let data = resp.data
-        // console.log('payload.email is: ', payload.email)
-        // console.log('payload.password is: ', payload.password)
+        console.log('payload.email is: ', payload.email)
+        console.log('payload.password is: ', payload.password)
         // sanity check to make sure data is received
         if (data && data.length > 0) {
           // Test password entered (payload) against user object
@@ -37,6 +37,18 @@ const actions = {
         commit('loginError')
       })
   }
+//   loginUser ({commit}, payload) {
+//     // Stubbing for now, call to API to follow
+//     console.log('payload.email is: ', payload.email)
+//     console.log('payload.password is: ', payload.password)
+//     if (payload.email === 'test@user.com' && payload.password === '12345') {
+//       console.log('here in if of user vuex store module')
+//       payload.userId = '5d11bc9ee02f3318f61e6db9'
+//       commit('loginUser', payload)
+//     } else {
+//       commit('loginError')
+//     }
+//   }
 }
 
 const mutations = {

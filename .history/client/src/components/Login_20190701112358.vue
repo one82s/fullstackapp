@@ -65,21 +65,21 @@ export default {
   },
   methods: {
     login: function () {
-      // console.log('here in if of Login Vue method')
+      console.log('here in if of Login Vue method')
       const vm = this
       const payload = {
         email: this.email,
         password: this.password
       }
-      this.$store.dispatch('loginUser', payload)
-        .then(() => {
-          if (vm.isLoggedIn) {
-            console.log('here in if of Login Vue')
-            this.$router.push({path: '/'})
-          } else {
-            vm.showAlert = true
-          }
-        })
+      // this.$store.dispatch('loginUser', payload)
+      //   .then(() => {
+      //     if (vm.isLoggedIn) {
+      //       console.log('here in if of Login Vue')
+      //       this.$router.push({path: '/'})
+      //     } else {
+      //       vm.showAlert = true
+      //     }
+      //   })
     },
     cancel: function () {
       console.log('The user does not want to login')

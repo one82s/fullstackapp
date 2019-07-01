@@ -71,6 +71,7 @@ export default {
         email: this.email,
         password: this.password
       }
+      console.log('here in if of Login Vue method email: ', payload.email)
       this.$store.dispatch('loginUser', payload)
         .then(() => {
           if (vm.isLoggedIn) {
